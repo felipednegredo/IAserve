@@ -10,6 +10,18 @@
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
   </properties>
+  <dependencies>
+    <!-- suas outras dependências aqui -->
+
+    <!-- dependency para o jade.jar local -->
+    <dependency>
+      <groupId>com.tilab</groupId>
+      <artifactId>jade</artifactId>
+      <version>4.6.0</version>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/lib/JADE/bin/jade/lib/jade.jar</systemPath>
+    </dependency>
+  </dependencies>
   <build>
     <plugins>
       <plugin>

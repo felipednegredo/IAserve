@@ -6,25 +6,39 @@ import jade.lang.acl.ACLMessage;
 
 public class Garcom extends Agent {
     private boolean restauranteAberto = false;
+
     @Override
     protected void setup() {
         System.out.println("Garçom iniciado.");
 
         addBehaviour(new CyclicBehaviour() {
+            @Override
             public void action() {
                 ACLMessage msg = receive();
                 if (msg != null) {
-                    if (!restauranteAberto) {
-                        if ("restaurante aberto".equals(msg.getContent())) {
-                            restauranteAberto = true;
-                            System.out.println("[Garçom] Restaurante aberto, pronto para trabalhar.");
-                        }
-                        // Ignora outras mensagens até o restaurante abrir
+                    String conteudo = msg.getContent();
+
+                    // Controle de abertura/fechamento
+                    if ("restaurante aberto".equals(conteudo)) {
+                        restauranteAberto = true;
+                        System.out.println("[Garçom] Restaurante aberto, pronto para trabalhar.");
                         return;
                     }
-                    switch (msg.getContent()) {
+                    if ("restaurante fechado".equals(conteudo)) {
+                        restauranteAberto = false;
+                        System.out.println("[Garçom] Restaurante fechado, encerrando turno.");
+                        return;
+                    }
+
+                    // Se não estiver aberto, ignora tudo até abrir
+                    if (!restauranteAberto) {
+                        return;
+                    }
+
+                    // Fluxo de trabalho do garçom enquanto aberto
+                    switch (conteudo) {
                         case "fazer pedido":
-                            System.out.println("Garçom recebeu pedido do cliente.");
+                            System.out.println("[Garçom] Recebi pedido do cliente.");
                             ACLMessage toChef = new ACLMessage(ACLMessage.INFORM);
                             toChef.addReceiver(getAID("chef"));
                             toChef.setContent("preparar pedido");
@@ -32,7 +46,7 @@ public class Garcom extends Agent {
                             break;
 
                         case "pedido pronto":
-                            System.out.println("Garçom recebeu comida do chef.");
+                            System.out.println("[Garçom] Pedido pronto, levando ao cliente.");
                             ACLMessage toCliente = new ACLMessage(ACLMessage.INFORM);
                             toCliente.addReceiver(getAID("cliente"));
                             toCliente.setContent("entregando pedido");
@@ -40,7 +54,7 @@ public class Garcom extends Agent {
                             break;
 
                         case "reclamar":
-                            System.out.println("Garçom recebeu reclamação.");
+                            System.out.println("[Garçom] Cliente reclamou, comunicando chef.");
                             ACLMessage refazer = new ACLMessage(ACLMessage.INFORM);
                             refazer.addReceiver(getAID("chef"));
                             refazer.setContent("refazer pedido");
@@ -48,7 +62,7 @@ public class Garcom extends Agent {
                             break;
 
                         case "dar gorjeta":
-                            System.out.println("Garçom recebeu gorjeta.");
+                            System.out.println("[Garçom] Recebi gorjeta, informando chef.");
                             ACLMessage gorjetaChef = new ACLMessage(ACLMessage.INFORM);
                             gorjetaChef.addReceiver(getAID("chef"));
                             gorjetaChef.setContent("receber gorjeta");
@@ -56,8 +70,12 @@ public class Garcom extends Agent {
                             break;
 
                         case "pedir conta":
-                            System.out.println("Garçom recebeu pedido de conta.");
-                            // Simula cobrança
+                            System.out.println("[Garçom] Cliente pediu a conta.");
+                            // Aqui poderia ser disparada alguma rotina de pagamento
+                            break;
+
+                        default:
+                            // Mensagem desconhecida: ignora ou loga, se desejar
                             break;
                     }
                 } else {
