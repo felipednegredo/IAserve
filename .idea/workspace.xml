@@ -4,12 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d6126c92-c9b5-4e0d-aa67-979331be1c6a" name="Changes" comment="Adiciona inicialização do JADE e configura fundo da cena no Main.java" />
+    <list default="true" id="d6126c92-c9b5-4e0d-aa67-979331be1c6a" name="Changes" comment="Adicionado bibloteca do JadeFX">
+      <change afterPath="$PROJECT_DIR$/src/main/java/frontend/ChefSprite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/frontend/ClienteSprite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/frontend/GarcomSprite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/frontend/GerenteSprite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/frontend/Table.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/backgrounds/fundo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/characters/cliente/cliente-1/Esperando/000.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/characters/cliente/cliente-1/Esperando/001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/characters/cliente/cliente-1/Esperando/002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/characters/cliente/cliente-1/Esperando/003.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/characters/cliente/cliente-1/Esperando/004.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/objetos/cadeira.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/objetos/mesa-g.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/objetos/mesa-m.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/objetos/mesa-p.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/agentes/Gerente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agentes/Gerente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/backgrounds/chao.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/production/IAserve/agentes/Gerente$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/production/IAserve/agentes/Gerente$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/production/IAserve/agentes/Gerente$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/production/IAserve/agentes/Gerente$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/production/IAserve/agentes/Gerente$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/production/IAserve/agentes/Gerente$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/production/IAserve/agentes/Gerente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/production/IAserve/agentes/Gerente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/production/IAserve/backgrounds/chao.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/production/IAserve/frontend/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/production/IAserve/frontend/Main.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager" show_ignored="true" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -39,7 +66,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="Security Analysis" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -60,7 +87,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "FrontEnd",
-    "last_opened_file_path": "C:/Users/User/IdeaProjects/IAserve_REESTRUTURADO",
+    "last_opened_file_path": "C:/Users/User/IdeaProjects/IAserve/src/main/resources/objetos",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -74,7 +101,13 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\IdeaProjects\IAserve\src\main\resources\objetos" />
+      <recent name="C:\Users\User\IdeaProjects\IAserve\src\main\resources\backgrounds" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\IdeaProjects\IAserve\src\main\resources\characters\cliente\cliente-1\Esperando" />
+      <recent name="C:\Users\User\IdeaProjects\IAserve\src\main\resources\objetos" />
       <recent name="C:\Users\User\IdeaProjects\IAserve\src\main\sprites\backgrounds" />
       <recent name="C:\Users\User\IdeaProjects\IAserve\lib\JavaFX" />
     </key>
@@ -122,7 +155,8 @@
       <workItem from="1747616314354" duration="1146000" />
       <workItem from="1747617491972" duration="3415000" />
       <workItem from="1748569610877" duration="89000" />
-      <workItem from="1748652667023" duration="6449000" />
+      <workItem from="1748652667023" duration="7228000" />
+      <workItem from="1748708433745" duration="13731000" />
     </task>
     <task id="LOCAL-00001" summary="Ajustes nas ações dos agentes">
       <option name="closed" value="true" />
@@ -156,7 +190,23 @@
       <option name="project" value="LOCAL" />
       <updated>1748660006544</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Retirado alguns arquivos">
+      <option name="closed" value="true" />
+      <created>1748660510455</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1748660510455</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Adicionado bibloteca do JadeFX">
+      <option name="closed" value="true" />
+      <created>1748660977434</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1748660977434</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,7 +230,9 @@
     <MESSAGE value="Ajustes nas ações dos agentes" />
     <MESSAGE value="Adiciona classes principais e de visualização para a simulação do restaurante" />
     <MESSAGE value="Adiciona inicialização do JADE e configura fundo da cena no Main.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adiciona inicialização do JADE e configura fundo da cena no Main.java" />
+    <MESSAGE value="Retirado alguns arquivos" />
+    <MESSAGE value="Adicionado bibloteca do JadeFX" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adicionado bibloteca do JadeFX" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

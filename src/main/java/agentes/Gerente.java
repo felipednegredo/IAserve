@@ -14,13 +14,15 @@ public class Gerente extends Agent {
     private static final int HORA_FECHAMENTO    = 13;    // 13:00
     private static final int MONITOR_INTERVALO  = INTERVALO_TICK * 20; // 1s real entre logs de monitor
 
+    // Contador estático de ticks. A GUI (Main.java) poderá ler este valor.
+    private static int currentTick = 0;
+
     // capacidade do restaurante
     private static final int CAPACIDADE_TOTAL = 5;
 
     // estado do restaurante
-    private volatile boolean restauranteAberto;
-    private volatile int     lugaresDisponiveis;
-    private volatile int     currentTick;
+    public volatile boolean restauranteAberto;
+    public volatile int     lugaresDisponiveis;
 
     @Override
     protected void setup() {
@@ -33,8 +35,15 @@ public class Gerente extends Agent {
             @Override
             protected void onTick() {
                 int tick     = getTickCount();
-                currentTick  = tick;
                 int dayTime  = tick % CICLO_DIA;
+
+                // Incrementa um tick a cada execução
+                currentTick++;
+
+                // Se chegar ao fim do ciclo (um dia completo), zera para recomeçar o próximo dia
+                if (currentTick >= CICLO_DIA) {
+                    currentTick = 0;
+                }
 
                 // reset no início de cada dia
                 if (dayTime == 0) {
@@ -122,8 +131,12 @@ public class Gerente extends Agent {
         System.out.println("Gerente encerrando expediente.");
     }
 
+    public static int getCurrentTick() {
+        return currentTick;
+    }
+
     // formata "Dia X - HH:MM"
-    private String formatHorario(int tick) {
+    public static String formatHorario(int tick) {
         int dayTime    = tick % CICLO_DIA;
         int diaCount   = tick / CICLO_DIA + 1;
         int horaJogo   = (dayTime / 1000 + OFFSET_HORA) % 24;
