@@ -1,0 +1,6 @@
+frontend\Main.class
+agentes\Cliente$Estado.class
+agentes\SocketAgent.class
+frontend\SocketClient.class
+frontend\RestauranteView.class
+agentes\SocketAgent$1.class

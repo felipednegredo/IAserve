@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="JavaFX_JADE" type="Application" factoryName="Application">
+    <option name="ALTERNATIVE_JRE_PATH" value="openjdk-24" />
+    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+    <option name="MAIN_CLASS_NAME" value="frontend.Main" />
+    <module name="IAserve" />
+    <option name="VM_PARAMETERS" value="--enable-native-access=ALL-UNNAMED --module-path lib/JavaFX/lib --add-modules javafx.controls,javafx.graphics " />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
